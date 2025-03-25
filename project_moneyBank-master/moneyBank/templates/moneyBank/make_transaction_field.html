@@ -2,7 +2,7 @@
 {%block content %}
 <div class="row" style="margin: 10px;">
     <div class="card text-center col-12" style=" padding:10px;">
-        <div class="card-header">Receiver</div>
+        <div class="card-header">Sender</div>
         <div class="card-body">
             <h2 class="card-title font_0" style="line-height:1.41em;font-size:22px;font-weight: 800;">
                 <span class="color_15">{{ first_name }} {{ last_name }}</span>
@@ -32,7 +32,7 @@
 
 <div class="row" style="margin: 10px;">
     <div class="card text-center col-12" style=" padding:10px;">
-        <div class="card-header">Sender</div>
+        <div class="card-header">Receiver</div>
         <div class="card-body">
             <form action="{% url 'view_all_customers' %}" method="post" class="form form-horizontal">
                 {% csrf_token %}

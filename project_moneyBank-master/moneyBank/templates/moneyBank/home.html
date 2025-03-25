@@ -1,53 +1,58 @@
-{%extends "./base.html" %}
-{%block content %}
-<div>
-    <img src="../../static/images/home_background.jpg">
+{% extends "./base.html" %}
+{% block content %}
+<!-- Hero Section (Background image) -->
+<div style="position: relative; height: 400px;">
+    <img src="../../static/images/home_background.jpg" alt="Background Image" style="width: 100%; height: 100%; object-fit: cover;">
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center;">
+        <!-- <h1 class="font-weight-bold" style="font-size: 48px;">Bank Services</h1>
+        <p style="font-size: 20px;">Choose from the following services</p> -->
+    </div>
 </div>
-<div class="d-flex justify-content-center align-items-center" style="height:100px;">
-    <h1 style="font-size:35px;" class="font-weight-bold text-dark">Services</h1>
-</div>
-<div class="d-flex justify-content-center align-items-center" style="height:50px;">
-    <h3>Please choose from the following</h3>
-</div>
-<!-- Carousel wrapper -->
-<div id="carouselMultiItemExample" class="carousel slide carousel-dark text-center" data-mdb-ride="carousel">
-    <!-- Inner -->
-    <div class="carousel-inner py-4">
-        <!-- Single item -->
-        <div class="carousel-item active">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-5">
-                        <a href="/view_all_customers/">
-                            <div class="card">
-                                <img src="../../static/images/View All Customers.jpg" class="card-img-top"
-                                    alt="View All Customer" />
-                                <div class="card-body">
-                                    <h5 style="font-size: 20px;" class="card-title text-dark">View All Customer</h5>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 d-none d-lg-block">
 
-                    </div>
-                    <div class="col-lg-5 d-none d-lg-block">
-                        <a href="/view_transactions_page/">
-                            <div class="card">
-                                <img src="../../static/images/Accounting Documents.jpg" class="card-img-top"
-                                    alt="View Transaction History" />
-                                <div class="card-body">
-                                    <h5 style="font-size: 20px;" class="card-title text-dark">View Transaction History
-                                    </h5>
-                                </div>
+<!-- Service Cards Section -->
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="row g-4">
+                <!-- Card 1: View All Customers -->
+                <div class="col-lg-6 col-md-12">
+                    <a href="/view_all_customers/" style="text-decoration: none;">
+                        <div class="card shadow-sm rounded-4 border-0 overflow-hidden">
+                            <div class="card-body text-center">
+                                <i class="fas fa-users" style="font-size: 50px; color: #0066FF;"></i>
+                                <h5 class="card-title text-dark" style="font-size: 22px; margin-top: 15px;">Send an Interac e-transfer</h5>
+                                <p class="text-muted">select an account and send money instantly</p>
                             </div>
-                        </a>
-                    </div>
+                        </div>
+                    </a>
                 </div>
+
+                <!-- Spacer -->
+                <div class="col-12 d-lg-none">
+                    <div style="height: 30px;"></div>
+                </div>
+
+                <!-- Card 2: View Transaction History -->
+                <div class="col-lg-6 col-md-12">
+                    <a href="/view_transactions_page/" style="text-decoration: none;">
+                        <div class="card shadow-sm rounded-4 border-0 overflow-hidden">
+                            <div class="card-body text-center">
+                                <i class="fas fa-file-invoice-dollar" style="font-size: 50px; color: #0066FF;"></i>
+                                <h5 class="card-title text-dark" style="font-size: 22px; margin-top: 15px;">View Transaction History</h5>
+                                <p class="text-muted">Review your past transactions and accounting documents</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                
+
+
             </div>
         </div>
     </div>
-    <!-- Inner -->
 </div>
-{%include "./footer.html"%}
-{%endblock %}
+
+<!-- Footer -->
+{% include "./footer.html" %}
+{% endblock %}
