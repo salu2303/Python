@@ -1,0 +1,7 @@
+<h2>Available Products</h2>
+<ul>
+    {% for product in products %}
+        <li>{{ product.name }} - ${{ product.price_per_unit }}</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'create_quote' %}">Get a Quote</a>

@@ -1,0 +1,25 @@
+{%extends "./base.html" %}
+{%block content %}
+<div class="d-flex justify-content-center align-items-center" style="margin:10px;height:100px;">
+    <h1 style="font-size:35px;" class="font-weight-bold text-dark">All Customers</h1>
+</div>
+<div class="row" style="margin: 10px;">
+    <ul class="list-group list-group-flush col-12" style="padding:10px;">
+        {%for i in all_customers%}
+        <li class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+                <h2 class="font_0" style="text-align:left;line-height:1.41em;font-size:22px">
+                    <span class="color_15">{{ i.first_name }} {{ i.last_name }}</span>
+                </h2>
+                <span class="color_15">Account No.: <b>{{ i.id }}</b></span>
+            </div>
+            <span class="color_15"><a href="/view_customer/{{i.user_email}}/">View Customer</a></span>
+            <br />
+            <span class="color_15"><a href="/make_transaction_field/{{i.user_email}}/">Make a Transaction</a></span>
+        </li>
+        {%endfor %}
+    </ul>
+</div>
+
+{%include "./footer.html"%}
+{%endblock %}

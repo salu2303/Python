@@ -1,0 +1,33 @@
+<!-- <h2>Get a Quote</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Generate Quote</button>
+</form> -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<h2>Get a Quote</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <p>Total Price: <span id="total_price">0</span></p>
+    <button type="submit">Generate Quote</button>
+</form>
+
+<script>
+$(document).ready(function() {
+    $('#id_product, #id_quantity').change(function() {
+        var product_id = $('#id_product').val();
+        var quantity = $('#id_quantity').val();
+        
+        if (product_id && quantity) {
+            $.ajax({
+                url: "/get_price/",
+                data: {'product_id': product_id, 'quantity': quantity},
+                success: function(data) {
+                    $('#total_price').text(data.total_price);
+                }
+            });
+        }
+    });
+});
+</script>

@@ -1,0 +1,53 @@
+{%extends "./base.html" %}
+{%block content %}
+<div>
+    <img src="../../static/images/home_background.jpg">
+</div>
+<div class="d-flex justify-content-center align-items-center" style="height:100px;">
+    <h1 style="font-size:35px;" class="font-weight-bold text-dark">Services</h1>
+</div>
+<div class="d-flex justify-content-center align-items-center" style="height:50px;">
+    <h3>Please choose from the following</h3>
+</div>
+<!-- Carousel wrapper -->
+<div id="carouselMultiItemExample" class="carousel slide carousel-dark text-center" data-mdb-ride="carousel">
+    <!-- Inner -->
+    <div class="carousel-inner py-4">
+        <!-- Single item -->
+        <div class="carousel-item active">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <a href="/view_all_customers/">
+                            <div class="card">
+                                <img src="../../static/images/View All Customers.jpg" class="card-img-top"
+                                    alt="View All Customer" />
+                                <div class="card-body">
+                                    <h5 style="font-size: 20px;" class="card-title text-dark">View All Customer</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 d-none d-lg-block">
+
+                    </div>
+                    <div class="col-lg-5 d-none d-lg-block">
+                        <a href="/view_transactions_page/">
+                            <div class="card">
+                                <img src="../../static/images/Accounting Documents.jpg" class="card-img-top"
+                                    alt="View Transaction History" />
+                                <div class="card-body">
+                                    <h5 style="font-size: 20px;" class="card-title text-dark">View Transaction History
+                                    </h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Inner -->
+</div>
+{%include "./footer.html"%}
+{%endblock %}

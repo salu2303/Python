@@ -1,0 +1,21 @@
+{%extends "./base.html" %}
+{%block content %}
+<div class="row" style="margin: 10px;">
+    <div class="card text-center col-12" style=" padding:10px;">
+        <div class="card-body">
+            <h2 class="card-title font_0" style="line-height:1.41em;font-size:22px;font-weight: 800;">
+                <span class="color_15">{{ first_name }} {{ last_name }}</span>
+            </h2>
+            <h6 class="card-subtitle mb-2 text-muted"><span class="color_15">Account No.: <b>{{ id }}</b></span></h6>
+            <p class="card-text">
+            <p class="mb-1"><span class="color_15">Email Address: <b>{{ user_email }}</b> </p>
+            </p>
+            <p class="mb-1"><span class="color_15">Current Balance: <b><span>&#8377;</span>{{ current_balance }}</b>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>"Only for reference while presenting the task"</span><br /></p>
+            </p>
+            <a href="/make_transaction_field/{{user_email}}/" class="card-link">Make Transaction</a>
+        </div>
+    </div>
+</div>
+{%include "./footer.html"%}
+{%endblock %}
